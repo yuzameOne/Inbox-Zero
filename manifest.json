@@ -3,7 +3,7 @@
   "name": "Inbox Zero",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
-  "description": "Dynamic checklists: tag files with #tags, view them as checkboxes in your notes, and delete them permanently with one click. Drag-and-drop ordering preserved across sessions. Keep your vault clean and your inbox at zero.""author": "yuzame",
+  "description": "Dynamic checklists: tag files with #tags, view them as checkboxes in your notes, and delete them permanently with one click. Drag-and-drop ordering preserved across sessions. Keep your vault clean and your inbox at zero."
   "authorUrl": "https://github.com/yuzameOne/",
   "isDesktopOnly": false
 }
