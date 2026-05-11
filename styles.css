@@ -1,0 +1,105 @@
+.inbox-zero-container {
+  margin: 0.5em 0;
+  font-size: var(--font-text-size);
+  line-height: var(--line-height-normal);
+}
+
+.inbox-zero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: inbox-zero-counter;
+}
+
+.inbox-zero-item {
+  counter-increment: inbox-zero-counter;
+  display: flex;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  border-radius: var(--radius-s);
+  transition: background-color 0.15s ease;
+  cursor: grab;
+}
+
+.inbox-zero-item::before {
+  content: counter(inbox-zero-counter) ".";
+  width: 2em;
+  text-align: right;
+  margin-right: 0.6em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.inbox-zero-list li:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.inbox-zero-list .inbox-zero-item .inbox-zero-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-s);
+  margin-right: 1.2em !important;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+}
+
+.inbox-zero-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.inbox-zero-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 0.35em;
+  top: 0.15em;
+  width: 0.4em;
+  height: 0.7em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+.inbox-zero-checkbox:hover {
+  border-color: var(--interactive-accent);
+}
+
+/* Новый класс для ссылки (без internal-link) */
+.inbox-zero-list li a.inbox-zero-link {
+  color: var(--text-normal);
+  text-decoration: none;
+  font-weight: normal;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.inbox-zero-list li:hover a.inbox-zero-link {
+  color: var(--text-accent);
+  text-decoration: underline;
+}
+
+.inbox-zero-item.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.inbox-zero-item.drag-over {
+  background-color: var(--background-modifier-hover);
+  border-radius: var(--radius-s);
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1em;
+  text-align: center;
+}
